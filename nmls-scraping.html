@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.nmlsconsumeraccess.org/" />
+<title>nmls-latest-02032017</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">nmls-latest-02032017</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>20</td>
+	<td>fast</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>comb</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>skippedCompanies</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>totalCompanies</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>companyID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>zipCode</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>coy</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>id</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>mlo</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>streetZipCode</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>email</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>website</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>prompt('Provide array values')</td>
+	<td>values</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Array(${values});</td>
+	<td>myArray</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${myArray}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>index</td>
+</tr>
+<!--array loop start-->
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['myArray'].length;</td>
+	<td>arrayLength</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${arrayLength}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>storedVars['index'] &lt; storedVars['myArray'].length;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['myArray'][storedVars['index']]	</td>
+	<td>zipCode</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${zipCode}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=searchText</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchText</td>
+	<td>${zipCode}</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=searchButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=filterCompany</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=filterCompany</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=img[alt=&quot;apply filters&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;apply filters&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//h1[@id=&quot;filterTotal&quot;]</td>
+	<td>*found!</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--modulus reminder for pages - start-->
+<tr>
+	<td>setSpeed</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>id=filterCompany</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//h1[@id=&quot;filterTotal&quot;]</td>
+	<td>*found!</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>50</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>xpath=//div[contains(text(),&quot;Enter the characters in the exact&quot;)]</td>
+	<td>captcha</td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>function sleep(milliseconds) {&nbsp;&nbsp;&nbsp;var start = new Date().getTime();&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; 1e7; i++) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ((new Date().getTime() - start) &gt; milliseconds){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;} }; if(storedVars.captcha=='true'){sleep(15000)}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=#filterTotal</td>
+	<td>match</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>&quot;${match}&quot;.split(&quot; &quot;)[0];</td>
+	<td>matches</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>Math.floor(storedVars['matches']/9)</td>
+	<td>div</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['matches']%9</td>
+	<td>rem</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${match}, ${matches}, ${div}, ${rem}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>javascript{if(storedVars.rem&gt;0){PageCount=storedVars.div+1} else {PageCount=storedVars.div}}</td>
+	<td>PageCount</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>storedVars['totalCompanies'], ${totalCompanies}, ${matches}, Page Count : ${PageCount}, Div : ${div}</td>
+	<td></td>
+</tr>
+<!--skipping if no company is present - start-->
+<tr>
+	<td>storeEval</td>
+	<td>'${match}'=='No matches found!'</td>
+	<td>noMatches</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${noMatches}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>'${noMatches}'=='true'</td>
+	<td>zipCodeSkip</td>
+</tr>
+<!--modulus reminder for pages - end-->
+<tr>
+	<td>echo</td>
+	<td>${matches}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>${totalCompanies}+${matches}</td>
+	<td>totalCompanies</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Total Number of Copanies :&nbsp;&nbsp;${totalCompanies}</td>
+	<td></td>
+</tr>
+<!--pages loop start-->
+<tr>
+	<td>setSpeed</td>
+	<td>${fast}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1</td>
+	<td>count</td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>storedVars.count&lt;=storedVars.PageCount</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>${fast}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1</td>
+	<td>MyVar</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${PageCount}, ${count}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.count==1</td>
+	<td>firstPage</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${firstPage}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>'${firstPage}'=='true'</td>
+	<td>firstPageLabel</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Page ${count}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Page ${count}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>firstPageLabel</td>
+	<td></td>
+</tr>
+<!--for elements on page-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//a[@class=&quot;company&quot;]</td>
+	<td>*</td>
+</tr>
+<tr>
+	<td>storeXpathCount</td>
+	<td>//a[@class=&quot;company&quot;]</td>
+	<td>items</td>
+</tr>
+<!--extracting companies loop start-->
+<tr>
+	<td>while</td>
+	<td>storedVars.MyVar&lt;=${items}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>${fast}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.PageCount&gt;1</td>
+	<td>secondPage</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>'${secondPage}'=='false'</td>
+	<td>pageHighlightLabel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div/ul/li/strong[1][contains(text(),'${count}')]/parent::li</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>pageHighlightLabel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${items}, ${MyVar}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@class=&quot;company&quot;])[${MyVar}]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[@class=&quot;company&quot;])[${MyVar}]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>xpath=//span[@id=&quot;ttSponsoredMLOs&quot; or @id=&quot;ttRegisteredMLOs&quot;]/../../..//td[2]</td>
+	<td>mloPresent</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${mloPresent}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>mlo</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>'${mloPresent}'==&quot;false&quot;</td>
+	<td>mloSkip</td>
+</tr>
+<!--checking if there are two MLOs present-->
+<tr>
+	<td>storeElementPresent</td>
+	<td>xpath=//span[@id=&quot;ttSponsoredMLOs&quot; or @id=&quot;ttRegisteredMLOs&quot;]/../../..//td[2]/..//td[4]</td>
+	<td>twoMlos</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>'${twoMlos}'=='false'</td>
+	<td>twoMlosSkipLabel</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=//span[@id=&quot;ttSponsoredMLOs&quot; or @id=&quot;ttRegisteredMLOs&quot;]/../../..//td[2]</td>
+	<td>mlo1</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=//span[@id=&quot;ttSponsoredMLOs&quot; or @id=&quot;ttRegisteredMLOs&quot;]/../../..//td[2]/..//td[4]</td>
+	<td>mlo2</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.mlo1.replace(',','');</td>
+	<td>mlo1</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars.mlo2.replace(',','');</td>
+	<td>mlo2</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${mlo1}, ${mlo2}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>${mlo1}&gt;${mlo2}</td>
+	<td>equate</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${equate}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>if(${mlo1}&gt;${mlo2}){storedVars.mlo=storedVars.mlo1} else {storedVars.mlo=storedVars.mlo2}</td>
+	<td>mlo</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${mlo}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${mlo}&lt;3</td>
+	<td>mloSkip</td>
+</tr>
+<tr>
+	<td>gotoLabel</td>
+	<td>twoMlosSkipLabel2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>twoMlosSkipLabel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=//span[@id=&quot;ttSponsoredMLOs&quot; or @id=&quot;ttRegisteredMLOs&quot;]/../../..//td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=//span[@id=&quot;ttSponsoredMLOs&quot; or @id=&quot;ttRegisteredMLOs&quot;]/../../..//td[2]</td>
+	<td>mlo</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${mlo}&lt;3</td>
+	<td>mloSkip</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>twoMlosSkipLabel2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id='entityDetail']/div[1]/table[1]/tbody/tr/td[4]/table/tbody/tr[1]/td[1]/../..//td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id='entityDetail']/div[1]/table[1]/tbody/tr/td[4]/table/tbody/tr[1]/td[1]/../..//td[2]</td>
+	<td>website</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id='entityDetail']/div[1]/table[1]/tbody/tr/td[4]/table/tbody/tr[2]/td[1]/..//td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id='entityDetail']/div[1]/table[1]/tbody/tr/td[4]/table/tbody/tr[2]/td[1]/..//td[2]</td>
+	<td>email</td>
+</tr>
+<tr>
+	<td>gotoLabel</td>
+	<td>noMloMatchSkip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>mloSkip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>${skippedCompanies}+1</td>
+	<td>skippedCompanies</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['companyID'] + &quot;|&quot; + storedVars['id']</td>
+	<td>companyID</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${companyID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>noMloMatchSkip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>goBack</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${mlo}&lt;3</td>
+	<td>companySkipLabel</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//a[@class=&quot;company&quot;])[${MyVar}]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(//a[@class=&quot;company&quot;])[${MyVar}]</td>
+	<td>coy</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//span[contains(text(),&quot;NMLS ID:&quot;)])[${MyVar}]/../..//td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(//span[contains(text(),&quot;NMLS ID:&quot;)])[${MyVar}]/../..//td[2]</td>
+	<td>id</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>xpath=(//span[contains(text(),&quot;Address:&quot;)])[${MyVar}]/../..//td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(//span[contains(text(),&quot;Address:&quot;)])[${MyVar}]/../..//td[2]</td>
+	<td>Address</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['Address'].match(/\d+-?\d+$/);</td>
+	<td>streetZipCode</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${streetZipCode}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['comb'] + &quot; | &quot; + storedVars['zipCode'] + &quot; | &quot; + storedVars['coy'] + &quot; | &quot; + storedVars['id']&nbsp;&nbsp;+ &quot; | &quot; + storedVars['mlo']&nbsp;&nbsp;+ &quot; | &quot; + storedVars['streetZipCode'] + &quot; | &quot; + storedVars['email'] + &quot; | &quot; + storedVars['website']</td>
+	<td>comb</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>companySkipLabel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>setSpeed</td>
+	<td>${fast}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars.MyVar++;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--for pages-->
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars.count++;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>arrayLoop</td>
+	<td></td>
+</tr>
+<!--array loop end-->
+<tr>
+	<td>label</td>
+	<td>zipCodeSkip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars.index++;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--for pages-->
+<tr>
+	<td>storeEval</td>
+	<td>${totalCompanies}-${skippedCompanies}</td>
+	<td>netCompanies</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>FINAL : ${comb}, Zip Codes : ${arrayLength}, Total Companies : ${totalCompanies}, Skipped Companies : ${skippedCompanies}, Net Companies : ${netCompanies}</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
